@@ -27,6 +27,9 @@ namespace AirlineReservation.Models
 
         [Required]
         public string? Sex { get; set; }
+        
+        [Required]
+        public string? UserImage { get; set; }
 
         [Range(18, 100)]
         public int? Age { get; set; }

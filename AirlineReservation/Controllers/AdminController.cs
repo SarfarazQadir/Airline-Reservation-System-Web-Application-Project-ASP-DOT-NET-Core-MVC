@@ -83,5 +83,48 @@ namespace AirlineReservation.Controllers
             _mycontext.SaveChanges();
             return RedirectToAction("profile");
         }
+        public IActionResult FetchUser()
+        {
+            var admin = HttpContext.Session.GetString("admin_session");
+            if (admin != null)
+            {
+                return View(_mycontext.Users.ToList());
+
+            }
+            else
+            {
+                return RedirectToAction("login");
+            }
+        }
+
+        public IActionResult DetailUser(int id)
+        {
+            return View(_mycontext.Users.FirstOrDefault(c => c.UserId == id));
+        }
+        public IActionResult UpdateUser(int id)
+        {
+            return View(_mycontext.Users.Find(id));
+        }
+        [HttpPost]
+        public IActionResult UpdateUser(User user, IFormFile user_image)
+        {
+            string ImagePath = Path.Combine(_env.WebRootPath, "UserImages", user_image.FileName);
+            using (FileStream fs = new FileStream(ImagePath, FileMode.Create))
+            {
+                user_image.CopyTo(fs);
+            }
+            user.UserImage = user_image.FileName;
+            _mycontext.Users.Update(user);
+            _mycontext.SaveChanges();
+            return RedirectToAction("FetchUser");
+        }
+
+        public IActionResult DeleteUser(int id)
+        {
+            var user = _mycontext.Users.Find(id);
+            _mycontext.Users.Remove(user);
+            _mycontext.SaveChanges();
+            return RedirectToAction("FetchUser");
+        }
     }
 }

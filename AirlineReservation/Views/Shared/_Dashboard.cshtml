@@ -249,34 +249,28 @@
                             <a href="@Url.Action("index","admin")" class="nav-link"><i data-feather="home"></i><span>Dashboard</span></a>
                         </li>
                         <li class="dropdown">
-                            <a href="@Url.Action("FetchUsers","admin")" class="nav-link"><i data-feather="users"></i><span>Users</span></a>
+                            <a href="@Url.Action("FetchUser","admin")" class="nav-link"><i data-feather="users"></i><span>Users</span></a>
                         </li>
                         <li class="dropdown">
-                            <a href="@Url.Action("FetchCategory","admin")" class="nav-link"><i data-feather="list"></i><span>Category</span></a>
+                            <a href="@Url.Action("FetchFlight","admin")" class="nav-link"><i data-feather="arrow-up"></i><span>Flight</span></a>
                         </li>
                         <li class="dropdown">
-                            <a href="@Url.Action("FetchAccessory","admin")" class="nav-link"><i data-feather="server"></i><span>Accessory</span></a>
-                        </li>
-                        @*  <li class="dropdown">
-                        <a href="@Url.Action("FetchProduct","admin")" class="nav-link"><i data-feather="shopping-bag"></i><span>Product</span></a>
-                        </li> *@
-                        <li class="dropdown">
-                            <a href="@Url.Action("FetchPlants","admin")" class="nav-link"><i data-feather="slack"></i><span>Plants</span></a>
+                            <a href="@Url.Action("FetchFlightSchedule","admin")" class="nav-link"><i data-feather="clock"></i><span>Flight Schedule</span></a>
                         </li>
                         <li class="dropdown">
-                            <a href="@Url.Action("FetchCart","admin")" class="nav-link"><i data-feather="shopping-cart"></i><span>Cart</span></a>
+                            <a href="@Url.Action("FetchReservation","admin")" class="nav-link"><i data-feather="calendar"></i><span>Reservation</span></a>
                         </li>
                         <li class="dropdown">
-                            <a href="@Url.Action("FetchOrder","admin")" class="nav-link"><i data-feather="truck"></i><span>Order</span></a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="@Url.Action("FetchReviews","admin")" class="nav-link"><i data-feather="heart"></i><span>Reviews</span></a>
+                            <a href="@Url.Action("FetchTicket","admin")" class="nav-link"><i data-feather="archive"></i><span>Ticket</span></a>
                         </li>
                         <li class="dropdown">
                             <a href="@Url.Action("FetchFeedBack","admin")" class="nav-link"><i data-feather="mail"></i><span>Feedback</span></a>
                         </li>
                         <li class="dropdown">
                             <a href="@Url.Action("Index","User")" class="nav-link"><i data-feather="globe"></i><span>Website</span></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="@Url.Action("Logout","Admin")" class="nav-link"><i class="fas fa-sign-out-alt" ></i><span>Logout</span></a>
                         </li>
                     </ul>
                     <script>
