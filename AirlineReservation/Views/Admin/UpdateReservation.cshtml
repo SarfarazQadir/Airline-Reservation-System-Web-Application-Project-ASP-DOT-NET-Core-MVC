@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewData["Title"] = "UpdateReservation";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+@model Reservation
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Update Reservation</h4>
+                    </div>
+                    <div class="card-body">
+                        <form enctype="multipart/form-data" method="post">
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">User Id</label>
+                                <div class="col-sm-9">
+                                    <input type="hidden" name="ReservationId" value="@Model.ReservationId" class="form-control" id="inputEmail3">
+                                    <input type="text" name="UserId" value="@Model.UserId" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Flight Id</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="FlightId" value="@Model.FlightId" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="date" class="col-sm-3 col-form-label">Departure Date</label>
+                                <div class="col-sm-9">
+                                    <input type="datetime-local" name="DepartureDate" value="@Model.DepartureDate" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Trip Type</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="TripType" value="@Model.TripType" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Status</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="Status" value="@Model.Status" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Blocking Number</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="BlockingNumber" value="@Model.BlockingNumber" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Confirmation Number</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="ConfirmationNumber" value="@Model.ConfirmationNumber" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Total Price</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="TotalPrice" value="@Model.TotalPrice" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Mileage</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="Mileage" value="@Model.Mileage" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="card-footer center">
+                                <input type="submit" value="Update Reservation" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

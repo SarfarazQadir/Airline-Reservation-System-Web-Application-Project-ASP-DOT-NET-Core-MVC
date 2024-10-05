@@ -8,8 +8,9 @@ namespace AirlineReservation.Models
         {
         }
 
-        public DbSet<Admin> tbl_admin { get; set; }
         // DbSets for each model
+
+        public DbSet<Admin> tbl_admin { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Flight> Flights { get; set; }
         public DbSet<Reservation> Reservations { get; set; }

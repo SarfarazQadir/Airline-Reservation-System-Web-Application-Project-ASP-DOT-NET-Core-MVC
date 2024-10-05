@@ -13,22 +13,20 @@ namespace AirlineReservation.Models
         [Required, MaxLength(50)]
         public string FirstName { get; set; }
 
-        [Required, MaxLength(50)]
+        [MaxLength(50)]
         public string? LastName { get; set; }
 
-        [Required, MaxLength(200)]
+        [MaxLength(200)]
         public string? Address { get; set; }
 
-        [Required, Phone]
+        [Phone]
         public string? PhoneNumber { get; set; }
 
         [Required, EmailAddress]
         public string EmailAddress { get; set; }
 
-        [Required]
         public string? Sex { get; set; }
         
-        [Required]
         public string? UserImage { get; set; }
 
         [Range(18, 100)]

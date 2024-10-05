@@ -4,5 +4,91 @@
     Layout = "~/Views/Shared/_Dashboard.cshtml";
 }
 
-<h1>UpdateUser</h1>
+@model User
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>User Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <form enctype="multipart/form-data" method="post">
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">User Name</label>
+                                <div class="col-sm-9">
+                                    <input type="hidden" name="UserId" class="form-control" value="@Model.UserId" id="inputEmail3">
+                                    <input type="text" name="FirstName" class="form-control" value="@Model.FirstName" id="inputEmail3">
+                                </div>
 
+                            
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Last Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="LastName" class="form-control" value="@Model.LastName" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">User Phone</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="PhoneNumber" class="form-control" value="@Model.PhoneNumber" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">User Age</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="Age" class="form-control" value="@Model.Age" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">User Email</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="EmailAddress" class="form-control" value="@Model.EmailAddress" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">User Password</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="Password" class="form-control" value="@Model.Password" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Sex</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="Sex" class="form-control" value="@Model.Sex" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">User CreditCard Number</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="CreditCardNumber" class="form-control" value="@Model.CreditCardNumber" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">User Address</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="Address" value="@Model.Address" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">User Image</label>
+                                <div class="col-sm-9">
+                                    <input type="file" name="UserImage" value="@Model.UserImage" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">SkyMiles</label>
+                                <div class="col-sm-9">
+                                    <input type="number" name="SkyMiles" value="@Model.SkyMiles" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="card-footer center">
+                                <input type="submit" value="Update User" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

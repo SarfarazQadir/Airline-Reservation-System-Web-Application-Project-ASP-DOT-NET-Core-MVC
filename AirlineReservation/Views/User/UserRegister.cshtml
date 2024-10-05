@@ -1,0 +1,199 @@
+﻿@{
+    ViewData["Title"] = "UserRegister";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Theme Colors */
+        :root {
+            --main-green: #3d5a41;
+            --gold-color: #cfae6b;
+            --background-color: #f9f7f1;
+        }
+
+        /* Background Image */
+        body {
+            background: url('/website/images/backgrounds/ian-taylor-4cGilXXLeao-unsplash.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden; /* Prevent scroll during transitions */
+        }
+
+        /* Form Section */
+        .form-container {
+            margin-top: 50px;
+            background-color: var(--background-color);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+            /* Fade-out effect */
+            .form-container.fade-out {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+        /* Form Input Styles */
+        .form-control {
+            border: 2px solid var(--main-green);
+            transition: 0.3s;
+        }
+
+            .form-control:focus {
+                border-color: var(--gold-color);
+                box-shadow: 0 0 5px var(--gold-color);
+            }
+
+        /* Button Styles */
+        .btn-primary {
+            background-color: var(--gold-color);
+            border-color: var(--gold-color);
+            color: white;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: var(--main-green);
+                border-color: var(--main-green);
+            }
+
+        .form-link {
+            color: var(--gold-color);
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+
+            .form-link:hover {
+                color: var(--main-green);
+            }
+
+        .form-text {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Anchor tag */
+        .form-link {
+            color: var(--gold-color);
+            text-align: center;
+            display: block;
+            margin-top: 20px;
+        }
+
+            .form-link:hover {
+                color: var(--main-green);
+            }
+        /* Heading */
+        h2 {
+            color: var(--main-green);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Register Form -->
+    <div class="container form-container">
+        <h2 class="text-center">Register</h2>
+        <form id="registerForm" class="row g-3 needs-validation" novalidate action="@Url.Action("UserRegister","User")" method="post">
+            <div class="col-md-12">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" name="FirstName" id="firstName" required="">
+                <div class="invalid-feedback">
+                    Please provide your first name.
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="EmailAddress" class="form-control" id="email" required="">
+                <div class="invalid-feedback">
+                    Please provide a valid email address.
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="Password" class="form-control" id="password" minlength="6" required="">
+                <div class="invalid-feedback">
+                    Password must be at least 6 characters.
+                </div>
+            </div>
+            @* <div class="col-12">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" required minlength="6">
+                <div class="invalid-feedback">
+                    Please confirm your password.
+                </div>
+            </div> *@
+            <div class="col-12">
+                <button class="btn btn-primary w-100" type="submit">Register</button>
+            </div>
+            <p class="form-text">Already have an account?<a href="@Url.Action("UserLogin","User")" class="form-link">Click here to login</a></p>
+            
+        </form>
+    </div>
+
+    <script>
+        // Client-side validation for registration form with password confirmation
+        (() => {
+            'use strict'
+            const registerForm = document.querySelector('#registerForm');
+
+            registerForm.addEventListener('submit', (event) => {
+                const password = document.querySelector('#password').value;
+                const confirmPassword = document.querySelector('#confirmPassword').value;
+
+                if (!registerForm.checkValidity() || password !== confirmPassword) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    if (password !== confirmPassword) {
+                        document.querySelector('#confirmPassword').classList.add('is-invalid');
+                        document.querySelector('#confirmPassword').nextElementSibling.textContent = "Passwords do not match.";
+                    }
+                }
+                registerForm.classList.add('was-validated');
+            }, false);
+        })();
+    </script>
+    <script>
+        // Function to handle form redirection with animation
+        function handleFormRedirection(url) {
+            const formContainer = document.querySelector('.form-container');
+
+            // Add the fade-out class to the form container for the transition
+            formContainer.classList.add('fade-out');
+
+            // Wait for the animation to complete before redirecting
+            setTimeout(() => {
+                window.location.href = url;
+            }, 500);  // Timeout matches the CSS transition duration
+        }
+
+        // Event listener for the registration and login links
+        document.querySelectorAll('.form-link').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();  // Prevent immediate redirection
+                const url = this.href;
+                handleFormRedirection(url);  // Call the animation function
+            });
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
