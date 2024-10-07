@@ -61,19 +61,43 @@ namespace AirlineReservation.Controllers
             else {
                 var Id = HttpContext.Session.GetString("UserSession");
                 var data = _mycontext.Users.Where(u => u.UserId == int.Parse(Id)).ToList();
+                ViewBag.checkSession = HttpContext.Session.GetString("UserSession");
                 return View(data);
             }
         }
+        [HttpPost]
+        public IActionResult ChangeProfileImage(IFormFile UserImage, User user)
+        {
+            string ImagePath = Path.Combine(_env.WebRootPath, "UserImages", UserImage.FileName);
+            using (FileStream fs = new FileStream(ImagePath, FileMode.Create))
+            {
+                UserImage.CopyTo(fs);
+            }
+            user.UserImage = UserImage.FileName;
+            _mycontext.Users.Update(user);
+            _mycontext.SaveChanges();
+            return RedirectToAction("UserProfile");
+        }
+        [HttpPost]
+        public IActionResult UpdateProfile(User user)
+        {
+            _mycontext.Users.Update(user);
+            _mycontext.SaveChanges();
+            return RedirectToAction("UserProfile");
+        }
         public IActionResult Index()
         {
+            ViewBag.checkSession = HttpContext.Session.GetString("UserSession");
             return View(_mycontext.Flights.ToList());
         }
         public IActionResult Contact()
         {
+            ViewBag.checkSession = HttpContext.Session.GetString("UserSession");
             return View();
         }
         public IActionResult About()
         {
+            ViewBag.checkSession = HttpContext.Session.GetString("UserSession");
             return View();
         }
         

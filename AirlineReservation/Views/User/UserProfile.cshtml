@@ -16,7 +16,7 @@
 
     /* Header Section */
     .header {
-        background-image: url('/website/images/backgrounds/ian-taylor-4cGilXXLeao-unsplash.jpg'); 
+        background-image: url('/website/images/backgrounds/UserDetails.png');
         height: 300px;
         background-size: cover;
         background-position: center;
@@ -100,8 +100,19 @@
 <div class="profile-img-container">
     <img src="@("~/UserImages/"+Model[0].UserImage)" asp-append-version="true" alt="Profile Image" class="profile-img">
     <!-- Separate Form for Changing Profile Image -->
-    <form id="profileImageForm" enctype="multipart/form-data" method="post" asp-action="UpdateUserProfileImage">
-        <input type="file" class="form-control mt-3" id="newProfileImage" required>
+    <form id="profileImageForm" enctype="multipart/form-data" method="post" asp-action="ChangeProfileImage">
+        <input type="hidden" name="UserId" value="@Model[0].UserId" />
+        <input type="hidden" name="Password" value="@Model[0].Password" />
+        <input type="hidden" name="FirstName" value="@Model[0].FirstName" />
+        <input type="hidden" name="LastName" value="@Model[0].LastName" />
+        <input type="hidden" name="Address" value="@Model[0].Address" />
+        <input type="hidden" name="PhoneNumber" value="@Model[0].PhoneNumber" />
+        <input type="hidden" name="Sex" value="@Model[0].Sex" />
+        <input type="hidden" name="EmailAddress" value="@Model[0].EmailAddress" />
+        <input type="hidden" name="Age" value="@Model[0].Age" />
+        <input type="hidden" name="CreditCardNumber" value="@Model[0].CreditCardNumber" />
+        <input type="hidden" name="SkyMiles" value="@Model[0].SkyMiles" />
+        <input type="file" class="form-control mt-3" name="UserImage" value="@Model[0].UserImage" id="newProfileImage" required>
         <button type="submit" class="btn change-profile-btn">Change Profile Image</button>
     </form>
 </div>
@@ -115,9 +126,10 @@
 <!-- User Details Form -->
 <div class="container form-container">
     <h2 class="text-center">User Details</h2>
-    <form id="userForm" class="row g-3 needs-validation" novalidate>
+    <form id="userForm" class="row g-3 needs-validation" novalidate method="post" asp-action="UpdateProfile">
         <div class="col-md-6">
             <label for="userId" class="form-label">User ID</label>
+            <input type="hidden" class="form-control mt-3" name="UserImage" value="@Model[0].UserImage" id="newProfileImage" >
             <input type="text" readonly name="UserId" value="@Model[0].UserId" class="form-control" id="userId" required>
             <div class="invalid-feedback">
                 Please provide a valid user ID.
@@ -168,7 +180,7 @@
         <div class="col-md-6">
             <label for="sex" class="form-label">Sex</label>
             <select class="form-control" value="@Model[0].Sex" name="Sex" id="sex" required>
-                <option value="@Model[0].Sex">Choose...</option>
+                <option value="@Model[0].Sex">@Model[0].Sex</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
