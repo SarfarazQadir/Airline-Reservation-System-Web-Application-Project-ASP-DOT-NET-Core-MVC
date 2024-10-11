@@ -14,3 +14,5 @@
 ![image](https://github.com/user-attachments/assets/d76bd601-2875-4034-95e9-45c6d5db200e)
 
 <h1>User Profile</h1>
+
+![image](https://github.com/user-attachments/assets/82c9e0b0-ddbc-4e39-a63f-c802e8462f85)
