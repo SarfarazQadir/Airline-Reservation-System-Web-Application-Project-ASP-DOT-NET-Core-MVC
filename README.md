@@ -20,3 +20,8 @@
 ![image](https://github.com/user-attachments/assets/f7f2990b-b3c0-4742-91ba-1d0e189d75d3)
 
 <h1>View Booking</h1>
+
+![image](https://github.com/user-attachments/assets/a55e26b6-352a-4158-bd2a-2b16f588c2b3)
+
+
+
