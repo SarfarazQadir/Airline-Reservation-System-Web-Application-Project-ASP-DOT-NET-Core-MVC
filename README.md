@@ -36,3 +36,7 @@
 <h1>Reservation</h1>
 
 ![image](https://github.com/user-attachments/assets/1b72475a-0756-4cfe-825e-1027cc39913d)
+
+<h1>Admin Panel</h1>
+
+
