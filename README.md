@@ -49,4 +49,5 @@
 
 <h1>User Details</h1>
 
+![image](https://github.com/user-attachments/assets/14f5e60f-1b8b-41da-9aa0-743fb35c1a03)
 
