@@ -54,3 +54,8 @@
 
 <h1>Flight Details</h1>
 
+![image](https://github.com/user-attachments/assets/e7e9fc90-1605-4dd4-ab0c-78ebbe348746)
+
+
+
+
