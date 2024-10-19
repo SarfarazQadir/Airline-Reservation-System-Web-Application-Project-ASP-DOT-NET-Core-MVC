@@ -52,4 +52,5 @@
 ![image](https://github.com/user-attachments/assets/14f5e60f-1b8b-41da-9aa0-743fb35c1a03)
 ![image](https://github.com/user-attachments/assets/602f45d8-d00a-4ea6-a076-3271678665c0)
 
+<h1>Flight Details</h1>
 
