@@ -64,7 +64,7 @@
 
 ![image](https://github.com/user-attachments/assets/03f00cc7-c651-4f5a-a57b-f1e106c4f4f2)
 
-
+<h1>Reservation Details</h1>
 
 ![image](https://github.com/user-attachments/assets/139fe969-2b05-4055-9776-879e25b99d1e)
 
