@@ -68,6 +68,9 @@
 
 ![image](https://github.com/user-attachments/assets/139fe969-2b05-4055-9776-879e25b99d1e)
 
+<h1>Edit Reservation Details</h1>
+
+
 <h1>Feedbacks</h1>
 
 ![image](https://github.com/user-attachments/assets/2b73eb4a-a487-438d-a796-42454f0916ee)
