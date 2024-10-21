@@ -70,6 +70,7 @@
 
 <h1>Edit Reservation Details</h1>
 
+![Uploading image.png…]()
 
 <h1>Feedbacks</h1>
 
