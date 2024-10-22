@@ -45,6 +45,8 @@
 
 <h1>Edit Admin Profile</h1>
 
+![image](https://github.com/user-attachments/assets/f9412ac2-cfa7-4cd2-8e5e-448d8d6a68c4)
+
 <h1>Authentication</h1>
 
 ![image](https://github.com/user-attachments/assets/f2225d8a-4a85-4372-884f-e2ee10b60be2)
