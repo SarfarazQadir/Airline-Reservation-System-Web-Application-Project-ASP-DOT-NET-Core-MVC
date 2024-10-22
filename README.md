@@ -41,6 +41,9 @@
 
 <h1>Admin Profile</h1>
 
+![image](https://github.com/user-attachments/assets/da0a90ba-f99a-4da0-9eda-6aafc58d17a8)
+
+
 
 <h1>Authentication</h1>
 
