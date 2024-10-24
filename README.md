@@ -37,6 +37,8 @@
 
 ![image](https://github.com/user-attachments/assets/1b72475a-0756-4cfe-825e-1027cc39913d)
 
+<h1>Edit Reservation</h1>
+
 <h1>Admin Panel</h1>
 
 <h1>Admin Profile</h1>
